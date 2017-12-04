@@ -17,8 +17,6 @@ class Calculator {
         if(evaluation){
             return eval(evaluation);
         }
-
-
     }
 
     dot(input, btnVal) {
@@ -46,8 +44,6 @@ class Calculator {
         }
         this.decimalAdded = false;
     }
-
-
 }
 
 function init(calc) {
@@ -56,30 +52,26 @@ function init(calc) {
             var input = document.querySelector('.screen');
             var inputValue = input.innerHTML;
             var btnVal = this.innerHTML;
+            if(calc.isEvaluated){
+                inputValue = calc.clear();
+            }
             if (btnVal === 'C') {
                 input.innerHTML = calc.clear();
             } else if (btnVal === '=') {
                 input.innerHTML = calc.evaluate(inputValue);
+                calc.isEvaluated = true;
             } else if (calc.operators.indexOf(btnVal) > -1) {
                 calc.appendSign(input, inputValue, btnVal);
             } else if (btnVal === '.') {
                 calc.dot(input, btnVal);
             } else {
-                input.innerHTML += btnVal;
+                inputValue += btnVal;
+                input.innerHTML = inputValue;
             }
             e.preventDefault();
         }
     }
 }
-
-function controller(calc) {
-
-
-
-}
-
-
-
 
 window.onload = function (e) {
     var calc = new Calculator();

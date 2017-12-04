@@ -13,7 +13,7 @@ class Calculator {
         if(this.operators.indexOf(lastChar) > -1 || lastChar ==='.'){
             evaluation.replace(/.$/, '');
         }
-        this.decimalAdded = false;
+
         if(evaluation){
             return eval(evaluation);
         }
@@ -24,7 +24,9 @@ class Calculator {
     dot(input, btnVal) {
         if (!this.decimalAdded) {
             input.innerHTML += btnVal;
+            this.decimalAdded = true;
         }
+
     }
 
     clear() {
@@ -39,7 +41,6 @@ class Calculator {
         }else if(inputValue === '' && btnVal === '-'){
             input.innerHTML += btnVal;
         }
-        
         if(this.operators.indexOf(lastChar) > -1 && inputValue.length > 1) {
             input.innerHTML = inputValue.replace(/.$/, btnVal);
         }

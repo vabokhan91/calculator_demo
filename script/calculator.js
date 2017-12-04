@@ -19,7 +19,6 @@ for(var i = 0; i < keys.length; i++) {
                 evaluation.replace(/.$/, '');
             }
 
-
             if(evaluation){
                 input.innerHTML = eval(evaluation);
             }

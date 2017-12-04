@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#calculator{
+    width: 325px;
+    height: auto;
+    margin: 100px auto;
+    border-radius: 5px;
+    background: linear-gradient(#9dd2ea, #8bceec);
+    padding: 20px 20px 9px;
+}
+
+.keys{
+    overflow: hidden;
+}
+
+.top span.clear{
+    float: left;
+}
+
+.top .screen {
+    height: 40px;
+    width: 212px;
+
+    float: right;
+    background: cornflowerblue;
+    border-radius: 3px;
+    box-shadow: inset 0px 4px gray;
+
+    line-height: 40px;
+    font-size: 20px;
+    color:white;
+    text-align: right;
+}
+
+.keys, .top{
+    overflow: hidden;
+}
+
+.keys span, .top span.clear {
+    float: left;
+    cursor: pointer;
+    width: 66px;
+    height: 40px;
+    margin: 0 7px 11px 0;
+    border-radius: 3px;
+    background: white;
+
+    line-height: 40px;
+    text-align: center;
+
+    user-select: none;
+}
+
+span.operator {
+    margin-right: 0px;
+
+}
+
+.keys span.operator{
+    background: lightcyan;
+    margin-right: 0px;
+}
+
+.keys span.evaluate{
+    background: lightpink;
+}
+
+.top span.clear{
+    background: indianred;
+}
+
+.keys span:hover{
+    background: palevioletred;
+}
+
+.keys span.evaluate:hover{
+    background: palevioletred;
+}
+
+.top span.clear:hover{
+    background: palevioletred;
+}
